@@ -10,7 +10,7 @@ CREATE TABLE produit
 (
     id SERIAL PRIMARY KEY,
     nom	VARCHAR(512) NOT NULL,
-    prix DECIMAL(5,2) NOT NULL,
+    prix DECIMAL(7,2) NOT NULL,
     quantite INT NOT NULL,
     id_categorie INT NOT NULL,
     CONSTRAINT fk_categorie FOREIGN KEY (id_categorie) REFERENCES categorie (id)
