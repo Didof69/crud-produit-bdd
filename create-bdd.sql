@@ -1,26 +1,26 @@
 CREATE DATABASE crudproduit;
 
-CREATE TABLE categorie
+CREATE TABLE category
 (
-    id SERIAL PRIMARY KEY,
-    nom	VARCHAR(255) NOT NULL
+    category_id SERIAL PRIMARY KEY,
+    categoriy_name	VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE produit 
+CREATE TABLE product 
 (
-    id SERIAL PRIMARY KEY,
-    nom	VARCHAR(512) NOT NULL,
-    prix DECIMAL(7,2) NOT NULL,
-    quantite INT NOT NULL,
-    id_categorie INT NOT NULL,
-    CONSTRAINT fk_categorie FOREIGN KEY (id_categorie) REFERENCES categorie (id)
+    product_id SERIAL PRIMARY KEY,
+    product_name VARCHAR(512) NOT NULL,
+    price DECIMAL(7,2) NOT NULL,
+    quantity INT NOT NULL,
+    category_id INT NOT NULL,
+    CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES category (category_id)
 );
 
-CREATE TABLE utilisateur 
+CREATE TABLE 'user' 
 (
-    id SERIAL PRIMARY KEY,
-    nom VARCHAR(255) NOT NULL,
-    prenom VARCHAR(255) NOT NULL,
+    user_id SERIAL PRIMARY KEY,
+    user_name VARCHAR(255) NOT NULL,
+    firstname VARCHAR(255) NOT NULL,
     email VARCHAR(320) UNIQUE NOT NULL,
-    mot_de_passe CHAR(60) NOT NULL
+    password CHAR(60) NOT NULL
 );
