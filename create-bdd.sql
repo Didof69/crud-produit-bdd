@@ -3,7 +3,7 @@ CREATE DATABASE crudproduit;
 CREATE TABLE category
 (
     category_id SERIAL PRIMARY KEY,
-    categoriy_name	VARCHAR(255) NOT NULL
+    category_name VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE product 
@@ -16,7 +16,7 @@ CREATE TABLE product
     CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES category (category_id)
 );
 
-CREATE TABLE 'user' 
+CREATE TABLE "user"
 (
     user_id SERIAL PRIMARY KEY,
     user_name VARCHAR(255) NOT NULL,
